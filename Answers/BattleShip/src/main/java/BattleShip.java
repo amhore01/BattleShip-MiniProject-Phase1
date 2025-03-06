@@ -205,8 +205,11 @@ public class BattleShip {
       @return true if the input is in the correct format, false otherwise.
      */
     static boolean isValidInput(String input) {
-        //todo
-        return true;
+        if (input.length() < 2 || input.length() > 3) return false;
+        char letter = input.charAt(0);
+        String numberPart = input.substring(1);
+
+        return (letter >= 'A' && letter <= 'J') && numberPart.matches("[1-9]|10");
     }
 
     /**
