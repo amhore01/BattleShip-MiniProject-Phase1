@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Random
+import java.util.Random;
 /**
   The BattleShip class manages the gameplay of the Battleship game between two players.
   It includes methods to manage grids, turns, and check the game status.
@@ -188,7 +188,13 @@ public class BattleShip {
       @return true if all ships are sunk, false otherwise.
      */
     static boolean allShipsSunk(char[][] grid) {
-        //todo
+        for (int i = 0; i < GRID_SIZE; i++) {
+            for (int j = 0; j < GRID_SIZE; j++) {
+                if (grid[i][j] == 'S') {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
